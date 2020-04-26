@@ -1,0 +1,35 @@
+issues
+・ユニットテストクラス一つにしたいが、テストするメソッドが呼ぶメソッドにもテストコードを組み込みたい。
+・DBからcsv作れたらいいよね
+・
+・
+
+・formを作ってサービスに流せばスレッドのテストができる。
+・confirmCsvで各エラー項目が登録されずエラーになることを確かめたい。
+・csvAutomaticLinkageのファイル移動と作成をテストしたいがこんなもんはできるにきまってる
+・まずテンプレcsvからエラーになるようファイル作成
+・メソッド読んで結果（エラーメッセージ、登録されたDBレコード、エラー行数を確かめる）
+・なるべく既存のソースメソッドを使用して、テストしたいデータのインサート、加工など！テストコードが修正に追いつてなくて無駄な時間取られそう
+・
+・
+・
+・
+・
+・
+・
+・
+・
+・
+・
+・
+InputStream is = ... ; // getResourceAsStream;
+File file = new File("./", "copied.dat");
+try {
+    Files.copy(is, file.toPath());
+} catch (IOException e) {
+    e.printStackTrace();
+}
+noroDetailService.registKensaIrai(noroDetailForm, userInfo);//容器依頼のインサート
+NorovirusCsvDto dto = createCsvRow(row, isTochaku);//どっかでつかえるのでは
+						NorovirusKensa noro = commonService.getNorovirusKensa(shikibestsuCd, userInfo);
+						return noroSearchDao.search(form, NoroListMode.INSPECTOR_YOKI.getValue(), userInfo);//たぶんいらない
